@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width,initial-scale=0.5,user-scalable=no">
+    <link rel="stylesheet" href="./static/css/reset.css">
+    <link rel="stylesheet" href="https://at.alicdn.com/t/font_1196055_xqesro85gz.css">
+    <title>shop-client</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+  </body>
+  <!--解决点击响应延时0.3s问题-->
+  <script src="https://as.alipayobjects.com/g/component/fastclick/1.0.6/fastclick.js"></script>
+  <script>
+    if ('addEventListener' in document) {
+      document.addEventListener('DOMContentLoaded', function() {
+        FastClick.attach(document.body);
+      }, false);
+    }
+    if(!window.Promise) {
+      document.writeln('<script src="https://as.alipayobjects.com/g/component/es6-promise/3.2.2/es6-promise.min.js"'+'>'+'<'+'/'+'script>');
+    }
+
+    //取消浏览器默认行为
+    document.addEventListener('touchstart',function(event){
+      event.preventDefault();
+    }, false)
+
+    //点透
+    !(function () {
+      let aNodes = document.querySelectorAll('a');
+      let i = 0;
+      for (; i < aNodes.length; i++) {
+        aNodes[i].addEventListener('touchstart', function () {
+          window.location = this.href;
+        });
+      }
+    })();
+  </script>
+</html>
