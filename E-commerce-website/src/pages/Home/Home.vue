@@ -6,6 +6,14 @@
     <KingKongModule/>
     <SceneLightShoppingGuideModule/>
     <PersonalShop/>
+    <FlashSalnpmeModule/>
+    <NewItemList/>
+    <PopularItemList/>
+    <CategoryHotSellModule/>
+    <TagList/>
+
+
+    <footer></footer>
   </div>
 </template>
 
@@ -16,6 +24,20 @@
   import KingKongModule from './components/KingKongModule/KingKongModule'
   import SceneLightShoppingGuideModule from './components/SceneLightShoppingGuideModule/SceneLightShoppingGuideModule'
   import PersonalShop from './components/PersonalShop/PersonalShop'
+  import FlashSaleModule from './components/FlashSaleModule/FlashSaleModule'
+  import NewItemList from './components/NewItemList/NewItemList'
+  import PopularItemList from './components/PopularItemList/PopularItemList'
+  import CategoryHotSellModule from './components/CategoryHotSellModule/CategoryHotSellModule'
+  import TagList from './components/TagList/TagList'
+
+
+
+
+
+
+
+
+
   export default {
     name: 'Home',
     components:{
@@ -24,11 +46,18 @@
       PolicyDescList,
       KingKongModule,
       SceneLightShoppingGuideModule,
-      PersonalShop
+      PersonalShop,
+      FlashSaleModule,
+      NewItemList,
+      PopularItemList,
+      CategoryHotSellModule,    //.....
+      TagList
     }
   }
 </script>
 
-<style lang="stylus" rel="stylesheet/stylus" scoped>
-
+<style lang="stylus" rel="stylesheet/stylus">
+  footer
+    width 100%
+    height 84px
 </style>

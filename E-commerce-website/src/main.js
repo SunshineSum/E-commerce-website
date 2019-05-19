@@ -6,6 +6,9 @@ import router from './router'
 import 'lib-flexible'
 import store from './store/index'
 
+import { Button} from 'mint-ui'
+Vue.component(Button.name, Button);
+
 
 import Footer from './components/Footer/Footer'
 import './mock/mock-server'

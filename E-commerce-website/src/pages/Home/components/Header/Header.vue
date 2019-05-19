@@ -130,6 +130,7 @@
       width 650px
       /*background yellow*/
       display flex
+      overflow hidden
       .content
         display flex
         height 100%
@@ -144,7 +145,7 @@
           &:nth-child(1)
             margin-left 0
     .iconWarp
-      position fixed
+      position absolute
       right 0
       top 88px
       width 160px
@@ -158,11 +159,12 @@
         width 60px
         height 60px
         background rgba(255,255,255,0)
+        opacity 0
       .icon
         width 100px
         height 60px
         font-size 24px
-        margin-top 15px
+        /*margin-top 15px*/
         transform rotateZ(0deg)
         transition 1s
         &.active
@@ -175,7 +177,7 @@
       top 88px
       width 100%
       height 372px
-      /*background yellow*/
+      background #fff
       z-index 5
       .all
         padding-left 30px

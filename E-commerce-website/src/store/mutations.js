@@ -4,6 +4,11 @@ import {RECEIVE_CLASSIFY ,
   RECEIVE_KINGKONGLIST,
   RECEIVE_SCENELIGHTSHOPPINGGUIDEMODULE,
   RECEIVE_PERSONALSHOP,
+  RECEIVE_FLASHSALEMODULE,
+  RECEIVE_NEWITEMLIST,
+  RECEIVE_POPULARITEMLIST,
+  RECEIVE_CATEGORYHOTSELLMODULE,
+  RECEIVE_TAGLIST
 } from './mutation-types'
 
 export default {
@@ -31,5 +36,25 @@ export default {
   //接收私人定制数据
   [RECEIVE_PERSONALSHOP] (state, personalShop) {
     state.personalShop = personalShop
+  },
+  //接收限时购数据
+  [RECEIVE_FLASHSALEMODULE] (state, flashSaleModule) {
+    state.flashSaleModule = flashSaleModule
+  },
+  //接收新品首发数据
+  [RECEIVE_NEWITEMLIST] (state, newItemList) {
+    state.newItemList = newItemList
+  },
+  //接收新品首发数据
+  [RECEIVE_POPULARITEMLIST] (state, popularItemList) {
+    state.popularItemList = popularItemList
+  },
+  //接收类目热销榜数据
+  [RECEIVE_CATEGORYHOTSELLMODULE] (state, categoryHotSellModule) {
+    state.categoryHotSellModule = categoryHotSellModule
+  },
+  //接收品牌制造商数据
+  [RECEIVE_TAGLIST] (state, tagList) {
+    state.tagList = tagList
   },
 }
