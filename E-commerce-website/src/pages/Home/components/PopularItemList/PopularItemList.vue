@@ -11,13 +11,13 @@
     </div>
     <div class="top">
       <div class="left">
-        <img :src="popularItemList[0].scenePicUrl" alt="">
+        <img v-if="popularItemList[0]" :src="popularItemList[0].scenePicUrl" alt="">
       </div>
       <div class="right">
         <div class="tapWraper">520特惠</div>
-        <div class="name">{{popularItemList[0].name}}</div>
-        <div class="desc">{{popularItemList[0].simpleDesc}}</div>
-        <div class="price">￥{{popularItemList[0].counterPrice}}</div>
+        <div v-if="popularItemList[0]" class="name">{{popularItemList[0].name}}</div>
+        <div v-if="popularItemList[0]" class="desc">{{popularItemList[0].simpleDesc}}</div>
+        <div v-if="popularItemList[0]" class="price">￥{{popularItemList[0].counterPrice}}</div>
       </div>
     </div>
     <ul class="cut">

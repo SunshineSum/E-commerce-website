@@ -13,7 +13,7 @@
     <TagList/>
 
 
-    <footer></footer>
+    <div class="button"></div>
   </div>
 </template>
 
@@ -57,7 +57,7 @@
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus">
-  footer
+  .button
     width 100%
     height 84px
 </style>

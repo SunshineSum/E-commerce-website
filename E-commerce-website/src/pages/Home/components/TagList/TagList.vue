@@ -10,7 +10,7 @@
       </div>
     </div>
     <ul class="list">
-      <li v-for="(item,index) in tagList">
+      <li v-for="(item,index) in tagList" :key="index">
         <div class="content">
           <p class="title">{{item.name}}</p>
           <p class="con">{{item.floorPrice}}</p>

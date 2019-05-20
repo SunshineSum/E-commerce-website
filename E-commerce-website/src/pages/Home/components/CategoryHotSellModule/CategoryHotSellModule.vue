@@ -7,15 +7,15 @@
       <div class="top">
         <div class="item left">
           <p>热销榜</p>
-          <img :src="categoryHotSellModule[0].picUrl" alt="">
+          <img v-if="categoryHotSellModule[0]" :src="categoryHotSellModule[0].picUrl" alt="">
         </div>
         <div class="item right">
           <p>好评榜</p>
-          <img :src="categoryHotSellModule[1].picUrl" alt="">
+          <img v-if="categoryHotSellModule[1]" :src="categoryHotSellModule[1].picUrl" alt="">
         </div>
       </div>
       <ul class="bottom">
-        <li v-for="(item,index) in categoryHotSellModuleNew" :key="index">
+        <li v-if="item" v-for="(item,index) in categoryHotSellModuleNew" :key="index">
           <p>{{item.categoryName}}</p>
           <img :src="item.picUrl" alt="">
         </li>

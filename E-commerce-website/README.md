@@ -14,4 +14,10 @@
 ###4、完成首页类目热销榜模块布局
 ###5、完成个人中心页面布局
 ###6、完成购物车页面布局
-
+###7、修复了几个bage
+	（1）出现以下报错：Cannot read property 'counterPrice' of undefined"
+		原因：没有获取到数组数据就遍历，并且取其中每一项的属性
+		解决方案：判断是都数组中有数据，再进行获取其中的数据
+	（2）出现以下报错;Unknown custom element: <FlashSalnpmeModule> - did you register the component correctly? For recursive components, make sure to provide the "name" option.
+		原因：注册组件时组件名抒写错误
+		解决方案：修改组件名
