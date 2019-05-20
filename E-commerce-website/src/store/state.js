@@ -12,4 +12,7 @@ export default {
   popularItemList:[],   //人气推荐
   categoryHotSellModule:[],   //类目热销榜
   tagList:[],   //品牌制造商
+  zhongChouList:[],   //众筹
+  topicList:[],   //专题精选
+  categoryModule:[],    //分类
 }

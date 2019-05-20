@@ -8,7 +8,10 @@
             <div class="Shop">
               <img :src="personalShop.scenePicUrl">
             </div>
-            <span>{{personalShop.name}},{{personalShop.simpleDesc}}</span>
+            <div class="text">
+              <span>{{personalShop.name}}</span>
+              <span>￥{{personalShop.retailPrice}}</span>
+            </div>
           </div>
         </div>
 
@@ -83,7 +86,8 @@
     width 100%
     height 470px
     margin-bottom 20px
-    background yellow
+    background white
+    /*background yellow*/
     .title
       width 690px
       height 100px
@@ -99,7 +103,7 @@
         .personalShop
           width 216px
           height 300px
-          background orange
+          /*background orange*/
           margin-left 20px
           .Shop
             width 216px
@@ -108,9 +112,15 @@
             img
               width 216px
               height 216px
-          span
-            width 175px
-            height 63px
-            line-height 63px
-            font-size 24px
+              background #f5f5f5
+          .text
+            margin-bottom 10px
+            padding 0 10px
+            span
+              width 175px
+              height 63px
+              line-height 36px
+              font-size 24px
+              &:last-child
+                color #b4282d
 </style>

@@ -6,10 +6,10 @@
       </span>
       <div class="logo"></div>
       <div class="right">
-        <span class="item_icon sousuo">
+        <span class="item_icon sousuo" @click="goTo('/search')">
           <i class="iconfont iconiconsousuo"></i>
         </span>
-        <span class="item_icon">
+        <span class="item_icon" @click="goTo('/shopcart')">
           <i class="iconfont iconicongouwuche"></i>
         </span>
       </div>

@@ -3,7 +3,7 @@
     <div class="title">
       <div class="titleName">人气推荐</div>
       <div class="more">
-        <span>跟多</span>
+        <span>更多</span>
         <span class="item_icon">
           <i class="iconfont iconicon_jiangtoul_right"></i>
         </span>
@@ -50,7 +50,8 @@
   #popularItemList
     width 750px
     height 754px
-    background yellow
+    background white
+    /*background yellow*/
     padding-bottom 30px
     margin-bottom 20px
     .title
@@ -63,14 +64,14 @@
       .titleName
         width 289.5px
         height 100px
-        background yellow
+        /*background yellow*/
         font-size 32px
         line-height 100px
       .more
         width 80px
         height 100px
         font-size 28px
-        background yellow
+        /*background yellow*/
         display flex
         line-height 100px
         .iconfont
@@ -81,13 +82,14 @@
       width 690px
       height 280px
       margin 0 20px 30px 20px
-      background royalblue
+      /*background royalblue*/
       display flex
+      background #FEF0DF
       .left
         width 280px
         height 280px
         margin-right 30px
-        background orange
+        /*background orange*/
         float left
         img
           width 280px
@@ -98,7 +100,8 @@
         top 60px
         width 350px
         height 160px
-        background purple
+        margin-left 30px
+        /*background purple*/
         .tapWraper
           width 78px
           height 28px
@@ -129,11 +132,11 @@
       width 740px
       height 354px
       padding-left 10px
-      background orange
+      /*background orange*/
       li
         width 216px
         height 341px
-        background yellow
+        /*background yellow*/
         margin-left 20px
         padding-bottom 13px
         float left
@@ -141,6 +144,7 @@
           width 216px
           height 216px
           margin-bottom 12px
+          background #f5f5f5
         .price
           width 216px
           height 72px

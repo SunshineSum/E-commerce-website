@@ -8,11 +8,14 @@ import {RECEIVE_CLASSIFY ,
   RECEIVE_NEWITEMLIST,
   RECEIVE_POPULARITEMLIST,
   RECEIVE_CATEGORYHOTSELLMODULE,
-  RECEIVE_TAGLIST
+  RECEIVE_TAGLIST,
+  RECEIVE_ZHONGCHOULIST,
+  RECEIVE_TOPICLIST,
+  RECEIVE_CATEGORYMODULE
 } from './mutation-types'
 
 export default {
-  [RECEIVE_CLASSIFY] (state, {categoryData}) {
+  [RECEIVE_CLASSIFY] (state, categoryData) {
     state.categoryData = categoryData
   },
   [RECEIVE_HOMES] (state, {homeData}) {
@@ -56,5 +59,17 @@ export default {
   //接收品牌制造商数据
   [RECEIVE_TAGLIST] (state, tagList) {
     state.tagList = tagList
+  },
+  //接收众筹数据
+  [RECEIVE_ZHONGCHOULIST] (state, zhongChouList) {
+    state.zhongChouList = zhongChouList
+  },
+  //接收专题精选数据
+  [RECEIVE_TOPICLIST] (state, topicList) {
+    state.topicList = topicList
+  },
+  //接收分类数据
+  [RECEIVE_CATEGORYMODULE] (state, categoryModule) {
+    state.categoryModule = categoryModule
   },
 }

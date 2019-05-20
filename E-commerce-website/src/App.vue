@@ -11,6 +11,7 @@ export default {
   name: 'App',
   mounted () {
     this.$store.dispatch('getHomeData')
+    this.$store.dispatch('getCategoryData')
   }
 }
 </script>

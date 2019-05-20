@@ -11,6 +11,10 @@
     <PopularItemList/>
     <CategoryHotSellModule/>
     <TagList/>
+    <TopicList/>
+    <ZhongChouList/>
+    <CategoryModule/>
+
 
 
     <div class="button"></div>
@@ -29,8 +33,9 @@
   import PopularItemList from './components/PopularItemList/PopularItemList'
   import CategoryHotSellModule from './components/CategoryHotSellModule/CategoryHotSellModule'
   import TagList from './components/TagList/TagList'
-
-
+  import TopicList from './components/TopicList/TopicList'
+  import ZhongChouList from './components/ZhongChouList/ZhongChouList'
+  import CategoryModule from './components/CategoryModule/CategoryModule'
 
 
 
@@ -51,12 +56,17 @@
       NewItemList,
       PopularItemList,
       CategoryHotSellModule,    //.....
-      TagList
+      TagList,
+      TopicList,        //..........
+      ZhongChouList,
+      CategoryModule
     }
   }
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus">
+  #home
+    background #F5F5F5
   .button
     width 100%
     height 84px

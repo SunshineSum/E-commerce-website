@@ -3,7 +3,7 @@
     <div class="title">
       <div class="titleName">新品首发</div>
       <div class="more">
-        <span>跟多</span>
+        <span>更多</span>
         <span class="item_icon">
           <i class="iconfont iconicon_jiangtoul_right"></i>
         </span>
@@ -38,27 +38,28 @@
   #newItemList
     width 100%
     height 808px
-    background yellow
+    background white
+    /*background yellow*/
     padding-bottom 26px
     margin-bottom 20px
     .title
       width 690px
       height 100px
       padding 0 30px
-      background red
+      /*background red*/
       display flex
       justify-content space-between
       .titleName
         width 289.5px
         height 100px
-        background yellow
+        /*background yellow*/
         font-size 32px
         line-height 100px
       .more
         width 80px
         height 100px
         font-size 28px
-        background yellow
+        /*background yellow*/
         display flex
         line-height 100px
         .iconfont
@@ -70,18 +71,20 @@
       width 740px
       height 708px
       padding-left 10px
-      background orange
+      /*background orange*/
       li
         width 216px
         height 341px
-        background yellow
+        /*background yellow*/
         margin-left 20px
-        padding-bottom 13px
+        margin-bottom 13px
         float left
+
         img
           width 216px
           height 216px
           margin-bottom 12px
+          background #f5f5f5
         .price
           width 216px
           height 72px

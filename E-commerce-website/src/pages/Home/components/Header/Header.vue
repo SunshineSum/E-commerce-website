@@ -89,6 +89,7 @@
     position relative
     width 100%
     z-index 5
+    background white
     /*background yellow*/
     .headerTop
       display flex

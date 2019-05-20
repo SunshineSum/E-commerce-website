@@ -3,7 +3,7 @@
     <div class="title">
       <div class="titleAndTime">限时购</div>
       <div class="more">
-        <span>跟多</span>
+        <span>更多</span>
         <span class="item_icon">
           <i class="iconfont iconicon_jiangtoul_right"></i>
         </span>
@@ -36,25 +36,26 @@
     width 100%
     height 698px
     margin-bottom 20px
-    background yellow
+    background white
+    /*background yellow*/
     .title
       width 690px
       height 100px
       padding 0 30px
-      background red
+      /*background red*/
       display flex
       justify-content space-between
       .titleAndTime
         width 289.5px
         height 100px
-        background yellow
+        /*background yellow*/
         font-size 32px
         line-height 100px
       .more
         width 80px
         height 100px
         font-size 28px
-        background yellow
+        /*background yellow*/
         display flex
         line-height 100px
         .iconfont
@@ -66,14 +67,15 @@
       width 710px
       height 598px
       padding 0 10px 0 30px
-      background purple
+      /*background purple*/
       li
         width 216px
         height 269px
-        background yellow
-        padding-bottom 30px
+        /*background yellow*/
+        margin-bottom 30px
         margin-right 20px
         float left
+        background #F5F5F5
         img
           width 216px
           height 216px

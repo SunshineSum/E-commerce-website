@@ -9,7 +9,10 @@ import {RECEIVE_SEARCH ,
   RECEIVE_NEWITEMLIST,
   RECEIVE_POPULARITEMLIST,
   RECEIVE_CATEGORYHOTSELLMODULE,
-  RECEIVE_TAGLIST
+  RECEIVE_TAGLIST,
+  RECEIVE_ZHONGCHOULIST,
+  RECEIVE_TOPICLIST,
+  RECEIVE_CATEGORYMODULE
 } from './mutation-types'
 
 export default {
@@ -25,10 +28,20 @@ export default {
       commit(RECEIVE_POPULARITEMLIST,result.data.popularItemList)
       commit(RECEIVE_CATEGORYHOTSELLMODULE,result.data.categoryHotSellModule.categoryList)
       commit(RECEIVE_TAGLIST,result.data.tagList)
-
-
+      commit(RECEIVE_ZHONGCHOULIST,result.data.zhongChouList)
+      commit(RECEIVE_TOPICLIST,result.data.topicList)
+      commit(RECEIVE_CATEGORYMODULE,result.data.categoryModule)
 
       // console.log(result.data.kingKongModule.kingKongList)
+    }
+  },
+
+  async getCategoryData({commit}) {
+    const result=await categoryData()
+    if(result.code===0){
+      commit(RECEIVE_CLASSIFY,result.data)
+
+     // console.log(result.data,'000333000333')
     }
   },
 }

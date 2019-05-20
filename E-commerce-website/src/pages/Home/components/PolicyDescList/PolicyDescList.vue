@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="policyDescList">
     <ul class="policyDescList">
       <li>
         <i class="grow-icon"></i>
@@ -24,14 +24,17 @@
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus" scoped>
-  .policyDescList
-    width 690px
-    height 72px
-    line-height 72px
-    padding 0 30px
-    display flex
-    li
-      flex-grow 1
-      height 36px
-      font-size 24px
+  #policyDescList
+    background white
+    .policyDescList
+      width 690px
+      height 72px
+      line-height 72px
+      padding 0 30px
+      display flex
+      li
+        flex-grow 1
+        height 36px
+        font-size 24px
+        color #B4282D
 </style>

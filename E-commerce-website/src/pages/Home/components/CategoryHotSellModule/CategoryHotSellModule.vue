@@ -41,6 +41,7 @@
   #categoryHotSellModule
     width 750px
     height 710px
+    background white
     /*background yellow*/
     margin-bottom 20px
     .title
