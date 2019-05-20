@@ -6,7 +6,7 @@
     <KingKongModule/>
     <SceneLightShoppingGuideModule/>
     <PersonalShop/>
-    <FlashSalnpmeModule/>
+    <FlashSaleModule/>
     <NewItemList/>
     <PopularItemList/>
     <CategoryHotSellModule/>
