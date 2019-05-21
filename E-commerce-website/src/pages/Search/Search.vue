@@ -20,7 +20,7 @@
     <div class="nav">
       <div class="wrapper">
         <ul class="content">
-          <li v-for="(item,index) in categoryL1List" :key="index">{{item.name}}</li>
+          <li :class="{on:currentIndex===index}" v-for="(item,index) in categoryL1List" :key="index" @click="handleNav(index)">{{item.name}}</li>
         </ul>
       </div>
     </div>
@@ -46,18 +46,46 @@
 </template>
 
 <script>
+  import BScroll from 'better-scroll'
   import {mapState} from 'vuex'
   export default {
     name: 'Search',
+    data(){
+      return{
+        currentIndex:0,    //当前点击导航栏下标
+      }
+    },
     methods:{
       goTo(path){
         this.$router.replace(path)
+      },
+      handleNav(index){
+        this.currentIndex=index
       }
     },
     computed: {
       ...mapState(['categoryData']),
       categoryL1List(){
         return this.categoryData.categoryL1List
+      }
+    },
+    mounted(){
+      if(this.categoryData.categoryL1List){
+        new BScroll('.wrapper', {
+          click:true,
+          scrollX:true
+        })
+      }
+
+    },
+    watch:{
+      categoryData(){
+        this.$nextTick(()=>{
+          new BScroll('.wrapper', {
+            click:true,
+            scrollX:true
+          })
+        })
       }
     }
   }
@@ -138,6 +166,9 @@
             padding 4px 8px 4px 8px
             margin 0 20px
             font-size 28px
+            &.on
+              color #b4282d
+              border-bottom 4px solid #b4282d
             &:nth-child(1)
               margin-left 0
     .contentWarp

@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <router-view/>
-    <Footer v-show="$route.meta.isShowFoot"/>
+    <Footer class="footer" v-show="$route.meta.isShowFoot"/>
   </div>
 </template>
 
@@ -16,6 +16,7 @@ export default {
 }
 </script>
 
-<style>
-
+<style lang="stylus" rel="stylesheet/stylus">
+  #app
+    /*overflow-x hidden*/
 </style>

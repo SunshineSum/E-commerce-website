@@ -16,9 +16,6 @@
     computed:{
       ...mapState(['kingKongList']),
     },
-    mounted(){
-      console.log(this.kingKongList[0],'0000')
-    }
   }
 </script>
 

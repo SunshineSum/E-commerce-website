@@ -1,6 +1,6 @@
 <template>
   <div id="classify">
-    <div class="headerWarp">
+    <div class="headerWarp" @click="goTo('/sousuo')">
       <div class="header">
         <span class="item_icon">
         <i class="iconfont iconiconsousuo"></i>
@@ -33,6 +33,7 @@
 
 <script>
   import {mapState} from 'vuex'
+  import BScroll from 'better-scroll'
   export default {
     name: 'Classify',
     data(){
@@ -44,13 +45,43 @@
     computed: {
       ...mapState(['categoryData']),
       categoryL1List(){
-        return this.categoryData.categoryL1List.slice(0,12)
+        if(this.categoryData.categoryL1List){
+          return this.categoryData.categoryL1List.slice(0,12)
+        }
       }
     },
+
     methods:{
       headTitle(index){
         this.titles=this.categoryData.categoryL1List[index]
         this.thisIndex=index
+      },
+      // categoryL1List(){
+      //   return this.categoryData.categoryL1List.slice(0,12)
+      // },
+      goTo(path){
+        this.$router.push(path)
+      }
+    },
+    mounted(){
+      if(this.categoryData.categoryL1List){
+        this.titles=this.categoryData.categoryL1List[0]
+        new BScroll('.subcateList',{
+          probeType: 2,
+          click: true
+        })
+      }
+    },
+    watch:{
+      categoryData(){
+        // console.log('xxxxxxxxxxx')
+        this.$nextTick(()=>{
+          this.titles=this.categoryData.categoryL1List[0]
+          new BScroll('.subcateList',{
+            probeType: 2,
+            click: true,
+          })
+        })
       }
     }
 
@@ -110,37 +141,39 @@
         width 528px
         height 1097px
         padding 30px 30px 21px 30px
-        background yellow
+        overflow hidden
+        /*background yellow*/
         .subcate
           .img
             width 528px
             height 192px
             margin-bottom 32px
-            background royalblue
+            /*background royalblue*/
             img
               width 528px
               height 192px
           .cateList
+            clearFix()
             width 528px
-            height 864px
-            background purple
+            /*height 864px*/
+            /*background purple*/
             li
               float left
               width 144px
               height 216px
-              background yellow
+              /*background yellow*/
               margin-right 34px
               &:nth-child(3n)
                 margin-right 0
               img
                 width 144px
                 height 144px
-                background paleturquoise
+                /*background paleturquoise*/
                 border-radius 50%
               p
                 width 144px
                 height 72px
-                background royalblue
+                /*background royalblue*/
                 font-size 24px
                 line-height 72px
                 text-align center

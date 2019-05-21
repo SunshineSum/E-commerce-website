@@ -92,7 +92,7 @@
       width 690px
       height 100px
       padding 0 30px
-      font-size 24px
+      font-size 32px
       line-height 100px
   .swiper-container
     width 100%

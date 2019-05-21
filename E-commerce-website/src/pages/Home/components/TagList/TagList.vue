@@ -12,7 +12,7 @@
     <ul class="list">
       <li v-for="(item,index) in tagList" :key="index">
         <div class="content">
-          <p class="title">{{item.name}}</p>
+          <p class="name">{{item.name}}</p>
           <p class="con">{{item.floorPrice}}元起</p>
         </div>
         <img :src="item.appListPicUrl" alt="">
@@ -77,7 +77,7 @@
         .content
           width 100%
           height 72px
-          .title
+          .name
             width 100%
             height 33px
             margin-bottom 3px

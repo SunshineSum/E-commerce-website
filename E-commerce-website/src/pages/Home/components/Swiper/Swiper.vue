@@ -49,6 +49,7 @@
 
 <style lang="stylus" rel="stylesheet/stylus" >
   #swiper
+    margin-top 144px
     background white
     .swiper-container
       width 100%

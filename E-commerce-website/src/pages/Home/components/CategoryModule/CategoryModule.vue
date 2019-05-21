@@ -36,7 +36,6 @@
           scrollX:true
         })
       }
-
     },
     watch:{
       categoryModule(){

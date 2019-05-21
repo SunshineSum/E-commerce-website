@@ -6,6 +6,14 @@ import ShopCart from '../pages/ShopCart/ShopCart'
 import Search from '../pages/Search/Search'
 import Personal from '../pages/Personal/Personal'
 import Classify from '../pages/Classify/Classify'
+import Sousuo from '../pages/Sousuo/Sousuo'
+
+import OnPhone from '../pages/Personal/pages/OnPhone/OnPhone'
+import Login from '../pages/Personal/pages/Login/Login'
+import OnMail from '../pages/Personal/pages/OnMail/OnMail'
+import OnPhoneSignIn from '../pages/Personal/pages/OnPhoneSignIn/OnPhoneSignIn'
+import OnEmailSignIn from '../pages/Personal/pages/OnEmailSignIn/OnEmailSignIn'
+
 
 export default [
   {
@@ -38,7 +46,42 @@ export default [
   },
   {
     path: '/personal',
-    component: Personal
+    component: Personal,
+    children:[
+      {
+        path: '/personal/login',
+        component: Login,
+      },
+      {
+        path: '/personal/onPhone',
+        component: OnPhone,
+      },
+      {
+        path: '/personal/OnMail',
+        component: OnMail,
+      },
+      {
+        path: '/personal/onPhoneSignIn',
+        component: OnPhoneSignIn,
+      },
+      {
+        path: '/personal/onEmailSignIn',
+        component: OnEmailSignIn,
+      },
+
+
+
+      {
+        path: '/personal',
+        redirect: '/personal/login'
+      }
+    ]
+
+
+  },
+  {
+    path: '/sousuo',
+    component: Sousuo,
   },
 
   // 自动重定向路由

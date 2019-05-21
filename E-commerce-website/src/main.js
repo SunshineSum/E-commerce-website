@@ -5,9 +5,14 @@ import App from './App'
 import router from './router'
 import 'lib-flexible'
 import store from './store/index'
+import './validate/validate'
 
-import { Button} from 'mint-ui'
-Vue.component(Button.name, Button);
+import {Button,MessageBox} from 'mint-ui'
+Vue.component(Button.name, Button)
+
+import VeeValidate from 'vee-validate'
+
+Vue.use(VeeValidate)
 
 
 import Footer from './components/Footer/Footer'

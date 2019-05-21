@@ -14,8 +14,8 @@
     <TopicList/>
     <ZhongChouList/>
     <CategoryModule/>
-
-
+    <Lipin/>
+    <HomeMask/>
 
     <div class="button"></div>
   </div>
@@ -36,8 +36,8 @@
   import TopicList from './components/TopicList/TopicList'
   import ZhongChouList from './components/ZhongChouList/ZhongChouList'
   import CategoryModule from './components/CategoryModule/CategoryModule'
-
-
+  import Lipin from './components/Lipin/Lipin'
+  import HomeMask from './components/HomeMask/HomeMask'
 
 
 
@@ -59,7 +59,9 @@
       TagList,
       TopicList,        //..........
       ZhongChouList,
-      CategoryModule
+      CategoryModule,
+      Lipin,
+      HomeMask
     }
   }
 </script>

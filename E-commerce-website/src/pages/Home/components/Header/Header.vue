@@ -1,37 +1,44 @@
 <template>
-  <div id="header">
-    <div class="headerTop">
-      <div class="logo"></div>
-      <div class="headerSearch">
-        <i class="iconfont iconiconsousuo"></i>
-        <span>搜索商品，共22843款好物</span>
+  <div>
+    <div id="header">
+      <div class="headerTop">
+        <div class="logo"></div>
+        <div class="headerSearch" @click="goTo('/sousuo')">
+          <i class="iconfont iconiconsousuo"></i>
+          <span>搜索商品，共22843款好物</span>
+        </div>
+        <div class="login" @click="goTo('/personal')">
+          <span>登录</span>
+        </div>
       </div>
-      <div class="login">
-        <span>登录</span>
+      <div class="wrapper" v-show="!isShowMask">
+        <ul class="content">
+          <li :class="{on:currentIndex===100}" @click="handleNav(100)">推荐</li>
+          <li :class="{on:currentIndex===index}" v-for="(item,index) in kingKongListNav" :key="index" @click="handleNav(index)">{{item.text}}</li>
+        </ul>
       </div>
-    </div>
-    <div class="wrapper" v-show="!isShowMask">
-      <ul class="content">
-        <li>推荐</li>
-        <li v-for="(item,index) in kingKongListNav" :key="index">{{item.text}}</li>
-      </ul>
     </div>
     <div class="iconWarp">
       <div class="linear"></div>
       <i ref="icon" :class="{active:isShowMask}" class="iconfont iconjiantou1 icon" @click="isShowMaskFn"></i>
     </div>
-    <div class="navDetail" v-show="isShowMask">
-      <div class="all">
-        <span>全部频道</span>
+    <transition name="nav">
+      <div class="navDetail" v-show="isShowMask">
+        <div class="navs">
+          <div class="all">
+            <span>全部频道</span>
+          </div>
+          <ul class="content">
+            <li :class="{on:currentIndex===100}" @click="handleNav(100)">推荐</li>
+            <li :class="{on:currentIndex===index}" v-for="(item,index) in kingKongListNav" :key="index" @click="handleNav(index)">{{item.text}}</li>
+          </ul>
+        </div>
+        <div class="mask" v-show="isShowMask" @click="isShowMaskFn"></div>
       </div>
-      <ul class="content" >
-        <li >推荐</li>
-        <li v-for="(item,index) in kingKongListNav" :key="index" >{{item.text}}</li>
-      </ul>
-      <div class="mask" v-show="isShowMask"></div>
-    </div>
+    </transition>
 
   </div>
+
 </template>
 
 <script>
@@ -43,11 +50,11 @@
       return{
         kingKongListNames:[],
         isShowMask:false,
+        currentIndex:100,    //当前点击导航栏下标
       }
     },
     computed:{
       ...mapState(['kingKongList']),
-
       kingKongListNav(){
         return this.kingKongList.slice(0,9)
       }
@@ -58,6 +65,12 @@
       },
       clooseBtn(event){
         console.log(event)
+      },
+      handleNav(index){
+        this.currentIndex=index==100?100:index
+      },
+      goTo(path){
+        this.$router.push(path)
       }
     },
     mounted(){
@@ -67,7 +80,6 @@
           scrollX:true
         })
       }
-
     },
     watch:{
       kingKongList(){
@@ -86,7 +98,8 @@
   @import "../../../../common/stylus/mixins.styl"
 
   #header
-    position relative
+    position fixed
+    top 0
     width 100%
     z-index 5
     background white
@@ -143,43 +156,59 @@
           padding 0 16px
           margin-left 20px
           font-size 28px
+          &.on
+            color #b4282d
+            border-bottom 4px solid #b4282d
           &:nth-child(1)
             margin-left 0
-    .iconWarp
-      position absolute
-      right 0
-      top 88px
-      width 160px
+  .iconWarp
+    position fixed
+    right 0
+    top 88px
+    width 160px
+    height 60px
+    text-align center
+    line-height 60px
+    background #fff
+    z-index 300
+    display flex
+    .linear
+      width 60px
       height 60px
-      text-align center
-      line-height 60px
-      background #fff
-      z-index 10
-      display flex
-      .linear
-        width 60px
-        height 60px
-        background rgba(255,255,255,0)
-        opacity 0
-      .icon
-        width 100px
-        height 60px
-        font-size 24px
-        /*margin-top 15px*/
-        transform rotateZ(0deg)
+      background rgba(255,255,255,0)
+      opacity 0
+    .icon
+      width 100px
+      height 60px
+      font-size 24px
+      /*margin-top 15px*/
+      transform rotateZ(0deg)
+      transition 1s
+      &.active
+        transform rotateZ(180deg)
         transition 1s
-        &.active
-          transform rotateZ(180deg)
-          transition 1s
-    .navDetail
-      top-border-1px(#e4e4e4)
-      position absolute
-      left 0
-      top 88px
-      width 100%
-      height 372px
+  .navDetail
+    top-border-1px(#e4e4e4)
+    position fixed
+    top 88px
+    left 0
+    right 0
+    bottom 0
+    /*position absolute*/
+    /*left 0*/
+    /*top 88px*/
+    width 100%
+    height 100%
+    /*background #fff*/
+    z-index 200
+    &.nav-enter-active, &.nav-leave-active
+      transition opacity .5s
+    &.nav-enter, &.nav-leave-to
+      opacity 0
+    &.nav-enter-to
+      opacity 1
+    .navs
       background #fff
-      z-index 5
       .all
         padding-left 30px
         height 60px
@@ -200,10 +229,10 @@
           &.on
             border 1px solid #b4282d
             color #b4282d
-      .mask
-        position relative
-        width 100%
-        height 100%
-        background: rgba(0,0,0,.5);
-        z-index 1000
+    .mask
+      position relative
+      width 100%
+      height 100%
+      background-color rgba(0, 0, 0, .5)
+      z-index 10
 </style>
