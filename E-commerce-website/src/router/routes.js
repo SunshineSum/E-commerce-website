@@ -51,18 +51,30 @@ export default [
       {
         path: '/personal/login',
         component: Login,
+        meta: {
+          isShowHeader: true
+        }
       },
       {
         path: '/personal/onPhone',
         component: OnPhone,
+        meta: {
+          isShowHeader: true
+        }
       },
       {
         path: '/personal/OnMail',
         component: OnMail,
+        meta: {
+          isShowHeader: true
+        }
       },
       {
         path: '/personal/onPhoneSignIn',
         component: OnPhoneSignIn,
+        meta: {
+          isShowHeader: true
+        }
       },
       {
         path: '/personal/onEmailSignIn',

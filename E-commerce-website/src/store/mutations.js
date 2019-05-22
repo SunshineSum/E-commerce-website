@@ -11,7 +11,9 @@ import {RECEIVE_CLASSIFY ,
   RECEIVE_TAGLIST,
   RECEIVE_ZHONGCHOULIST,
   RECEIVE_TOPICLIST,
-  RECEIVE_CATEGORYMODULE
+  RECEIVE_CATEGORYMODULE,
+  RECEIVE_SEARCHDATALIST,
+  RECEIVE_RECOMMENDDATALIST
 } from './mutation-types'
 
 export default {
@@ -71,5 +73,16 @@ export default {
   //接收分类数据
   [RECEIVE_CATEGORYMODULE] (state, categoryModule) {
     state.categoryModule = categoryModule
+  },
+
+
+
+  //接收搜索返回数据
+  [RECEIVE_SEARCHDATALIST] (state, searchDataList) {
+    state.searchDataList = searchDataList
+  },
+  //接收推荐数据
+  [RECEIVE_RECOMMENDDATALIST] (state, recommendDataList) {
+    state.recommendDataList = recommendDataList
   },
 }

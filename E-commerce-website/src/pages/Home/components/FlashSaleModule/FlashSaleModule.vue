@@ -52,7 +52,7 @@
         font-size 32px
         line-height 100px
       .more
-        width 80px
+        width 90px
         height 100px
         font-size 28px
         /*background yellow*/

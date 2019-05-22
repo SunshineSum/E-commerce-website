@@ -15,4 +15,9 @@ export default {
   zhongChouList:[],   //众筹
   topicList:[],   //专题精选
   categoryModule:[],    //分类
+
+
+
+  searchDataList:[],    //搜索返回数据
+  recommendDataList:[],   //推荐数据
 }

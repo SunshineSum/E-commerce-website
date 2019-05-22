@@ -65,13 +65,50 @@
 ###10、完成邮箱账号密码页面布局并进行表单验证
 ###11、完成手机号注册页面布局并进行表单验证
 
+##day05
+###1、完成邮箱账号注册页面布局并进行表单验证
+###2、修复首页滚动bage
+	（1）同时给数组中多组数据设置滚动效果时没有出现滚动
+		原因：同时给数组中多组数据设置滚动效果，直接设置滚动，导致不知道给哪项添加滚动
+		解决方案：遍历每一项需要设置滚动的标签，给每一项设置滚动
+			watch:{
+		      categoryModule(){
+		        this.$nextTick(()=>{
+		          const lists=document.querySelectorAll('.wrapper')
+		          Array.from(lists).forEach((item,index)=>{
+		            new BScroll(item, {
+		              click:true,
+		              scrollX:true
+		            })
+		          })
+		
+		        })
+		      }
+		    }
 
+	(2)给Mint UI 上的button绑定给点击事件是不会触发
+		原因：点击事件绑定在了button内部的标签上面，点击时只点击到了button上面，没有点击到它内部的标签上面
+		解决方案：把点击事件绑定到button按钮上面
+###3、完成搜索功能
+	（1）给input绑定@keyup事件，当键盘抬起发送ajax请求
+		问题：清除输入数据时，下次搜索一上来显示上次搜索数据
+		原因：再次搜索时原数组保持原有数据
+		解决方案：再次搜索发送ajax请求之前先清除原数组数据，或者在点击删除按钮时清除数组中		数据（清空状态中数据）
+		注意：直接清空状态中的数据（但此时会出现报警）
+		
+		列：	searchDataList(){    				//直接从状态中获取数据
+				return this.$store.state.searchDataList
+			}
+		列：this.$store.state.searchDataList=[]  //直接修改状态中的数据
 
-
-
-
-
-
-
-
+###4、解决轮播图中分页器不切换问题
+		原因：未知
+		解决方案：
+			autoplay: {
+	          delay: 1000,
+	          stopOnLastSlide: false,
+	          disableOnInteraction: true,
+	        }
+###5、动态获取发现页面数据
+	根据数据中的标识，分别显示不同的页面效果
 

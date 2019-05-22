@@ -14,3 +14,8 @@ export const RECEIVE_TAGLIST = 'receive_taglist'    //接收品牌制造商数�
 export const RECEIVE_ZHONGCHOULIST = 'receive_zhongchoulist'    //接收众筹数据
 export const RECEIVE_TOPICLIST = 'receive_topiclist'    //接收专题精选数据
 export const RECEIVE_CATEGORYMODULE = 'receive_categorymodule'    //接收分类数据
+
+
+
+export const RECEIVE_SEARCHDATALIST = 'receive_searchdatalist'    //接收搜索返回数据
+export const RECEIVE_RECOMMENDDATALIST = 'receive_recommenddatalist'    //接收推荐数据

@@ -12,6 +12,8 @@ export default {
   mounted () {
     this.$store.dispatch('getHomeData')
     this.$store.dispatch('getCategoryData')
+
+    this.$store.dispatch('getRecommendDataList')
   }
 }
 </script>

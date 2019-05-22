@@ -29,21 +29,18 @@
     computed: {
       ...mapState(['categoryModule'])
     },
-    mounted(){
-      if(this.categoryModule.length>0){
-        new BScroll('.wrapper', {
-          click:true,
-          scrollX:true
-        })
-      }
-    },
+
     watch:{
       categoryModule(){
         this.$nextTick(()=>{
-          new BScroll('.wrapper', {
-            click:true,
-            scrollX:true
+          const lists=document.querySelectorAll('.wrapper')
+          Array.from(lists).forEach((item,index)=>{
+            new BScroll(item, {
+              click:true,
+              scrollX:true
+            })
           })
+
         })
       }
     }

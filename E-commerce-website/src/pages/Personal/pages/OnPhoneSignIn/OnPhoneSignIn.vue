@@ -16,11 +16,11 @@
         </div>
         <p style="color: red;" v-show="errors.has('code') ">{{ errors.first('code') }}</p>
         <div class="inputP phoneMsg">
-          <input type="text" minlength="8" maxlength="18" placeholder="请输入密码" v-model="msg" name="pwd" v-validate="{required: true,regex: /\d{6}$/}"/>
+          <input type="text" minlength="8" maxlength="18" placeholder="请输入密码" v-model="msg" name="pwd" v-validate="{required: true}"/>
         </div>
         <p style="color: red;" v-show="errors.has('pwd')">{{ errors.first('pwd') }}</p>
-        <mt-button class="btn" type="danger">
-          <a href="javascript:;" @click="login">注册</a>
+        <mt-button class="btn" type="danger" @click="login">
+          <a href="javascript:;" >注册</a>
         </mt-button>
         <div class="choose">
           <input type="checkbox">
@@ -33,8 +33,8 @@
           <div class="zc">
             <span @click="goTo('/personal/onEmailSignIn')">邮箱账号注册</span>
             <span class="item_icon">
-            <i class="iconfont iconicon_jiangtoul_right"></i>
-          </span>
+              <i class="iconfont iconicon_jiangtoul_right"></i>
+            </span>
           </div>
         </div>
       </div>
@@ -73,9 +73,9 @@
       async login(){
         let success = await this.$validator.validateAll(['phone','code'])
         if(success){
-          MessageBox.alert('登录成功');
+          MessageBox.alert('登录成功')
         }else {
-          MessageBox.alert('手机号或验证码不正确');
+          MessageBox.alert('手机号或验证码不正确')
         }
       }
     }

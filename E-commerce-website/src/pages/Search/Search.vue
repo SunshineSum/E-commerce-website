@@ -24,22 +24,45 @@
         </ul>
       </div>
     </div>
-    <div class="contentWarp">
-      <div class="content" v-for="(item,index) in categoryL1List" :key="index">
+    <div class="contentWarp" v-for="(recommendDatas,index) in recommendDataList.result" :key="index">
+      <div v-if="item.style===1" class="content" v-for="(item,index) in recommendDatas.topics" :key="index">
         <div class="name">
-          <img :src="item.bannerUrl" alt="">
-          <span>{{item.name}}</span>
+          <img :src="item.avatar" alt="">
+          <span>{{item.nickname}}</span>
         </div>
-        <div class="title">新年必备开运红，小红门、招财猫等低至49元</div>
+        <div class="title">{{item.title}}</div>
         <div class="pic">
-          <img :src="item.wapBannerUrl" alt="">
+          <img :src="item.picUrl" alt="">
         </div>
         <div class="rcount">
           <span class="item_icon">
             <i class="iconfont iconiconfontfaxian1"></i>
           </span>
-          <span>888w人看过</span>
+          <span>{{item.readCount}}人看过</span>
         </div>
+      </div>
+      <div class="content2" v-if="item.style===2" v-for="(item,index) in recommendDatas.topics" :key="index">
+        <div class="info">
+          <div class="name2">
+            <span class="ava">
+              <img :src="item.avatar" alt="">
+            </span>
+            <span class="nickname">{{item.nickname}}</span>
+          </div>
+
+          <div class="title2">{{item.title}}</div>
+          <div class="desc ellipsis">{{item.subTitle}}</div>
+          <div class="rcount2">
+          <span class="item_icon">
+            <i class="iconfont iconiconfontfaxian1"></i>
+          </span>
+            <span>{{item.readCount}}人看过</span>
+          </div>
+        </div>
+        <div class="img">
+          <img :src="item.picUrl" alt="">
+        </div>
+
       </div>
     </div>
   </div>
@@ -65,6 +88,7 @@
     },
     computed: {
       ...mapState(['categoryData']),
+      ...mapState(['recommendDataList']),
       categoryL1List(){
         return this.categoryData.categoryL1List
       }
@@ -208,6 +232,68 @@
           height 34px
           margin-bottom 18px 0 -16px 0
           font-size 24px
+          color rgba(0,0,0,.5)
           .iconfont
             font-size 24px
+            color rgba(0,0,0,.5)
+      .content2
+        width 690px
+        height 272px
+        padding 32px 30px 32px 30px
+        margin 20px 0
+        background white
+        .info
+          width 400px
+          height 272px
+          float left
+          .name2
+            clearFix()
+            width 400px
+            height 56px
+            float left
+            line-height 56px
+            .ava
+              width 54px
+              height 54px
+              border 1px solid #d9d9d9
+              margin-right 12px
+              border-radius 50%
+              float left
+              img
+                width 54px
+                height 54px
+                border-radius 50%
+            .nickname
+              /*width 224px*/
+              height 36px
+              font-size 28px
+              float left
+          .title2
+            width 400px
+            height 88px
+            margin-top 80px
+            font-size 36px
+          .desc
+            width 400px
+            height 40px
+            padding-top 8px
+            font-size 28px
+            color rgba(0,0,0,.5)
+          .rcount2
+            width 175px
+            height 34px
+            margin-top 18px
+            font-size 24px
+            color rgba(0,0,0,.5)
+            .iconfont
+              font-size 24px
+              color rgba(0,0,0,.5)
+        .img
+          width 272px
+          height 272px
+          float right
+          img
+            width 272px
+            height 272px
+
 </style>

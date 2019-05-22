@@ -11,7 +11,8 @@ VeeValidate.Validator.localize('zh_CN', {
     phone: '手机号',
     code: '验证码',
     pwd:'密码',
-    myemail:'邮箱账号'
+    myemail:'邮箱账号',
+    yhm:'用户名'
   }
 })
 

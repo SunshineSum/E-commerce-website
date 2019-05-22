@@ -10,9 +10,6 @@ import './validate/validate'
 import {Button,MessageBox} from 'mint-ui'
 Vue.component(Button.name, Button)
 
-import VeeValidate from 'vee-validate'
-
-Vue.use(VeeValidate)
 
 
 import Footer from './components/Footer/Footer'

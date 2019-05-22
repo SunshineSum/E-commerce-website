@@ -23,11 +23,11 @@
           <div class="left">注册账号</div>
           <div class="right">忘记密码</div>
         </div>
-        <mt-button class="btn" type="danger">
+        <mt-button class="btn" type="danger" @click="login">
           <span class="item_icon">
             <i class="iconfont iconicon-phone"></i>
           </span>
-          <a href="javascript:;" @click="login">登录</a>
+          <a href="javascript:;" >登录</a>
         </mt-button>
         <div class="footer">
           <mt-button class="btn" type="danger" @click="goTo('/personal')">
@@ -41,6 +41,7 @@
 </template>
 
 <script>
+  import { MessageBox } from 'mint-ui'
   export default {
     name: 'OnMail',
     data(){
@@ -56,9 +57,9 @@
       async login(){
         let success = await this.$validator.validateAll(['myemail','pwd'])
         if(success){
-          MessageBox.alert('登录成功');
+          MessageBox.alert('登录成功')
         }else {
-          MessageBox.alert('手机号或验证码不正确');
+          MessageBox.alert('邮箱或密码不正确')
         }
       },
     }

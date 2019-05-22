@@ -6,32 +6,68 @@
           <span class="item_icon">
             <i class="iconfont iconiconsousuo"></i>
           </span>
-          <input type="text" placeholder="英国摩飞榨汁杯，仅199元" v-model="text" />
-          <span class="item_icon" v-show="text" @click="text=''">
+          <input @keyup="handle" type="text" placeholder="英国摩飞榨汁杯，仅199元" v-model="text" />
+          <span class="item_icon" v-show="text" @click="clearInput">
             <i class="iconfont iconquxiao1"></i>
           </span>
         </div>
         <div class="right" @click="$router.back()">取消</div>
       </div>
-      <div class="con">
+      <div class="con" v-if="!text">
         <p class="title">热门搜索</p>
         <ul class="list">
-          <li v-for="(item,index) in list" :key="index">{{item}}</li>
+          <li :class="{on:currentIndex===index}" v-for="(item,index) in list" :key="index" @click="itemOn(index)">{{item}}</li>
         </ul>
       </div>
+      <ul class="sousuoList" v-if="text">
+        <li v-for="(item,index) in searchDataList" :key="index">{{item}}</li>
+      </ul>
     </div>
   </div>
 </template>
 
 <script>
+  import {mapState} from 'vuex'
+
   export default {
     name: "Sousuo",
     data(){
       return{
         list:['拖鞋','9.9元爆品超值购','粽子礼盒，限时8折','风扇','烟台大樱桃','耳机','电动牙刷69元起','袜子','夏凉床品','杯子','爆款  行李箱','女鞋'],
-        text:''
+        text:'',
+        currentIndex:0,    //当前点击导航栏下标
       }
     },
+    computed:{
+       ...mapState(['searchDataList']),
+      // searchDataList(){    //直接从状态中获取数据
+      //   return this.$store.state.searchDataList
+      // }
+
+    },
+    methods:{
+      itemOn(index){
+        this.currentIndex=index
+      },
+      handle(){
+        // this.searchDataList=[]
+        // this.$store.state.searchDataList=[]
+        setTimeout(()=>{
+          this.$store.dispatch('getSearchDataList',this.text)
+        },300)
+      },
+      clearInput(){
+        this.text=''
+        // this.searchDataList=[]
+        // this.$store.state.searchDataList=[]  //直接修改状态中的数据
+      }
+    },
+    // mounted() {
+    //   setTimeout(()=>{
+    //     this.$store.dispatch('getSearchDataList',this.text)
+    //   },1000)
+    //   // this.$store.dispatch('getSearchDataList',this.text)
+    // }
 
   }
 </script>
@@ -46,11 +82,12 @@
     .content
       width 750px
       height 412px
-      background #fff
+      /*background #fff*/
       .header
         bottom-border-1px(#e4e4e4)
         width 690px
         height 87px
+        background #fff
         /*background yellow*/
         padding 0 30px
         line-height 87px
@@ -94,6 +131,7 @@
         /*background purple*/
         padding 0 30px 30px
         margin-bottom 20px
+        background #fff
         .title
           width 690px
           height 90px
@@ -112,6 +150,23 @@
             padding 0 15px
             margin 0 32px 32px 0
             float left
+            &.on
+              border-color #b4282d
+              color #b4282d
+
+      .sousuoList
+        position relative
+        z-index 5
+        width 720px
+        padding-left 30px
+        background white
+        li
+          bottom-border-1px(#e4e4e4)
+          width 100%
+          height 104px
+          line-height 104px
+          font-size 32px
+
 
 </style>
 

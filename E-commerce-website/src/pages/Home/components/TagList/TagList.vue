@@ -37,6 +37,7 @@
     height 674px
     padding-bottom 8px
     background white
+    margin-bottom 20px
     /*background yellow*/
     .title
       width 690px
@@ -52,7 +53,7 @@
         font-size 32px
         line-height 100px
       .more
-        width 80px
+        width 90px
         height 100px
         font-size 28px
         /*background yellow*/

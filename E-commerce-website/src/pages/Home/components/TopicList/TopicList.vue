@@ -12,7 +12,7 @@
     <div class="swiper-container">
       <div class="swiper-wrapper">
         <div class="swiper-slide" v-for="(item,index) in topicList" :key="index">
-          <img :src="item.itemPicUrl" alt="实时热销top100">
+          <img :src="item.itemPicUrl" alt="">
           <p class="title">{{item.title}}</p>
           <p class="subtitle">{{item.subtitle}}</p>
         </div>
@@ -43,8 +43,11 @@
         pagination: {
           el: '.swiper-pagination',
         },
-        slidesPerView : 1.3,
-        spaceBetween : 20
+        autoplay: {
+          delay: 1000,
+          stopOnLastSlide: false,
+          disableOnInteraction: true,
+        }
       })
     }
   }
@@ -71,7 +74,7 @@
         font-size 32px
         line-height 100px
       .more
-        width 80px
+        width 90px
         height 100px
         font-size 28px
         /*background yellow*/
@@ -84,29 +87,29 @@
     .swiper-container
       width 690px
       height 378px
-      padding 0 30px 30px 30px
+      margin 0 30px 30px 30px
       .swiper-wrapper
-        width 480px
-        height 378px
+        width 100%
+        height 100%
         box-sizing border-box
         .swiper-slide
-          width 480px !important
+          width 100%
           height 354px
           padding-bottom 24px
           float left
           img
-            width 480px
+            width 100%
             height 269px
             padding-bottom 16px
           .title
-            width 440px
+            width 100%
             height 41px
             padding 0 20px
             margin-bottom 6px
             font-size 28px
             line-height 41px
           .subtitle
-            width 440px
+            width 100%
             height 24px
             padding 0 20px
             font-size 24px

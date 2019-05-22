@@ -17,7 +17,7 @@
           <p class="price">{{item.showRetailPrice}}</p>
           <div class="progressWarp">
             <div class="progress">
-              <div class="bg" :style="{width:(item.progress/item.projectId*360)+'px'}"></div>
+              <div class="bg" :style="{width:(item.progress/item.projectId*180)+'px'}"></div>
             </div>
             <div class="progressText">{{Math.round(item.progress/item.projectId*100)}}%</div>
           </div>
@@ -59,7 +59,7 @@
         font-size 32px
         line-height 100px
       .more
-        width 80px
+        width 90px
         height 100px
         font-size 28px
         /*background yellow*/

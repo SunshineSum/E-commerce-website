@@ -63,6 +63,11 @@
             pagination: {
               el: '.swiper-pagination',
             },
+            autoplay: {
+              delay: 1000,
+              stopOnLastSlide: false,
+              disableOnInteraction: true,
+            }
           })
         })
       }
@@ -98,7 +103,11 @@
     width 100%
     height 370px
     .swiper-wrapper
+      width 100%
+      height 370px
       .swiper-slide
+        width 100%
+        height 370px
         display flex
         .personalShop
           width 216px

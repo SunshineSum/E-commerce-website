@@ -42,6 +42,11 @@
         pagination: {
           el: '.swiper-pagination',
         },
+        autoplay: {
+          delay: 1000,
+          stopOnLastSlide: false,
+          disableOnInteraction: true,
+        }
       })
     }
   }

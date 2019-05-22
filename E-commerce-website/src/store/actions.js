@@ -1,4 +1,4 @@
-import {categoryData , categoryListData , homeData} from '../api/index'
+import {categoryData , categoryListData , homeData,getSousuoData,getRecommendData} from '../api/index'
 import {RECEIVE_SEARCH ,
   RECEIVE_HOMES ,
   RECEIVE_CLASSIFY,
@@ -12,7 +12,9 @@ import {RECEIVE_SEARCH ,
   RECEIVE_TAGLIST,
   RECEIVE_ZHONGCHOULIST,
   RECEIVE_TOPICLIST,
-  RECEIVE_CATEGORYMODULE
+  RECEIVE_CATEGORYMODULE,
+  RECEIVE_SEARCHDATALIST,
+  RECEIVE_RECOMMENDDATALIST
 } from './mutation-types'
 
 export default {
@@ -42,6 +44,27 @@ export default {
       commit(RECEIVE_CLASSIFY,result.data)
 
      // console.log(result.data,'000333000333')
+    }
+  },
+
+
+  async getSearchDataList({commit},keyword) {
+    const result=await getSousuoData(keyword)
+    // console.log('111',result)
+    if(result.code==="200"){
+      commit(RECEIVE_SEARCHDATALIST,result.data)
+      console.log(result.data)
+      // console.log(result.data,'000333000333')
+    }
+  },
+
+  async getRecommendDataList({commit}) {
+    const result=await getRecommendData()
+    console.log('111',result)
+    if(result.code==="200"){
+      commit(RECEIVE_RECOMMENDDATALIST,result.data)
+      console.log(result.data)
+      // console.log(result.data,'000333000333')
     }
   },
 }

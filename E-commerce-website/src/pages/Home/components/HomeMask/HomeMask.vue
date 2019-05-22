@@ -21,7 +21,8 @@
       isShowMaskFn(){
         this.isShowMask=false
       }
-  }
+
+    },
   }
 </script>
 
