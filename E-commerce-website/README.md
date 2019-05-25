@@ -14,11 +14,11 @@
 ###4、完成首页类目热销榜模块布局
 ###5、完成个人中心页面布局
 ###6、完成购物车页面布局
-###7、修复了几个bage
+###7、修复了几个bug
 	（1）出现以下报错：Cannot read property 'counterPrice' of undefined"
 		原因：没有获取到数组数据就遍历，并且取其中每一项的属性
 		解决方案：判断是都数组中有数据，再进行获取其中的数据
-	（2）出现以下报错;Unknown custom element: <FlashSalnpmeModule> - did you register the component correctly? For recursive components, make sure to provide the "name" option.
+	（2）出现以下报错：Unknown custom element: <FlashSalnpmeModule> - did you register the component correctly? For recursive components, make sure to provide the "name" option.
 		原因：注册组件时组件名抒写错误
 		解决方案：修改组件名
 
@@ -32,7 +32,7 @@
 ###7、完成分类页面布局
 
 ##day04
-###1、修复分类页面bage
+###1、修复分类页面bug
 	（1）更新页面没有显示画面
 		原因：刷新页面没有获取到数据
 		解决方案：
@@ -67,7 +67,7 @@
 
 ##day05
 ###1、完成邮箱账号注册页面布局并进行表单验证
-###2、修复首页滚动bage
+###2、修复首页滚动bug
 	（1）同时给数组中多组数据设置滚动效果时没有出现滚动
 		原因：同时给数组中多组数据设置滚动效果，直接设置滚动，导致不知道给哪项添加滚动
 		解决方案：遍历每一项需要设置滚动的标签，给每一项设置滚动

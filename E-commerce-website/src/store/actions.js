@@ -22,6 +22,8 @@ export default {
   async getHomeData({ commit}) {
     const result=await homeData()
     if(result.code===0){
+      commit(RECEIVE_HOMES,result.data)
+
       commit(RECEIVE_KINGKONGLIST,result.data.kingKongModule.kingKongList)
       commit(RECEIVE_SCENELIGHTSHOPPINGGUIDEMODULE,result.data.sceneLightShoppingGuideModule)
       commit(RECEIVE_PERSONALSHOP,result.data.personalShop)
