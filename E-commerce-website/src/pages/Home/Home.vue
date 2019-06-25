@@ -1,5 +1,6 @@
 <template>
   <div id="home">
+
     <Header/>
     <Swiper/>
     <PolicyDescList/>
