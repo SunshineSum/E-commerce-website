@@ -72,4 +72,5 @@
   .button
     width 100%
     height 84px
+    background #26a2ff
 </style>
