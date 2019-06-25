@@ -73,4 +73,5 @@
   .button
     width 100%
     height 84px
+    background #f40
 </style>
