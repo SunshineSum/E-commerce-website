@@ -14,7 +14,7 @@
         <div class="right" @click="$router.back()">取消</div>
       </div>
       <div class="con" v-if="!text">
-        <p class="title">热门搜索</p>
+        <p class="title">热门搜索...</p>
         <ul class="list">
           <li :class="{on:currentIndex===index}" v-for="(item,index) in list" :key="index" @click="itemOn(index)">{{item}}</li>
         </ul>
